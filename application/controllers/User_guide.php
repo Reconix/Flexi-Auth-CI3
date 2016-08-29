@@ -267,5 +267,3 @@ class User_guide extends CI_Controller {
 		$this->load->view('user_guide/misc/general_settings');
 	}
 }
-/* End of file user_guide.php */
-/* Location: ./application/controllers/user_guide.php */

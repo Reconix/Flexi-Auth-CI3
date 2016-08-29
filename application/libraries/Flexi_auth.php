@@ -1152,6 +1152,3 @@ class Flexi_auth extends Flexi_auth_lite
 		$this->CI->auth->template_data = $data;
 	}
 }
-
-/* End of file flexi_auth.php */
-/* Location: ./application/controllers/flexi_auth.php */

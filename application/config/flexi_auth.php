@@ -14,17 +14,7 @@
 * Phil Sturgeon, philsturgeon.co.uk
 * Mathew Davies
 *
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-* 
-* http://www.apache.org/licenses/LICENSE-2.0
-* 
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
+
 *
 * Description: A full login authorisation and user management library for CodeIgniter based on Ion Auth (By Ben Edmunds) which itself was based on Redux Auth 2 (Mathew Davies)
 * Released: 13/09/2012
@@ -137,7 +127,7 @@
 	
 	/**
 	 * User Login Session Table
-	 * The user login session table is used to validate user login credentials. For security purposes, if a users credentitals do not match those  
+	 * The user login session table is used to validate user login credentials. For security purposes, if a users credentials do not match those  
 	 * stored within the table, the user is automatically logged out.
 	 *
 	 * All columns are required.
@@ -283,7 +273,7 @@
 	$config['sessions']['name'] = 'flexi_auth';
 		
 	/**
-	 * Primary User Indentifier Session
+	 * Primary User Identifier Session
 	 * Contains the $config['database']['settings']['primary_identity_col'] column value (Defined above).
 	 * This value is then used to internally identify the user when performing CRUD functions.
 	*/
@@ -379,7 +369,7 @@
 	 * Set whether login details are validated on every page load.
 	 * @param bool
 	 *
-	 * TRUE = Login credentials are validated against the database everytime a page is loaded, invalid users are logged out automatically.
+	 * TRUE = Login credentials are validated against the database every time a page is loaded, invalid users are logged out automatically.
 	 * FALSE = Login credentials are validated only once at time of login and will not expire until CI sessions expire (Defined via CI config file).
 	*/
 	$config['security']['validate_login_onload'] = TRUE;
@@ -587,6 +577,13 @@
 	*/
 	$config['settings']['auto_increment_username'] = FALSE;
 	
+    /**
+	 * Set whether accounts are activate by default on registration / inserting user.
+	 * This option allows admins to verify account details before enabling users.
+	 * @param: bool
+	*/
+	$config['settings']['instant_activate_new_accounts'] = FALSE;
+	
 	/**
 	 * Set whether accounts are suspended by default on registration / inserting user.
 	 * This option allows admins to verify account details before enabling users.
@@ -760,6 +757,3 @@
 	$config['messages']['target_user']['form_validation_duplicate_identity'] = 'public';
 	$config['messages']['target_user']['form_validation_duplicate_email'] = 'public';
 	$config['messages']['target_user']['form_validation_duplicate_username'] = 'public';
-
-/* End of file flexi_auth.php */
-/* Location: ./system/application/config/flexi_auth.php */

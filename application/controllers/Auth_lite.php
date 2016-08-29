@@ -82,6 +82,3 @@ class Auth_lite extends CI_Controller {
 		$this->load->view('demo/lite_view', $this->data);
 	}
 }
-
-/* End of file auth_lite.php */
-/* Location: ./application/controllers/auth_lite.php */

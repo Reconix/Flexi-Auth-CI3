@@ -61,7 +61,7 @@ class Auth_public extends CI_Controller {
 	 * These demos show working examples of how to implement some (most) of the functions available from the flexi auth library.
 	 * This particular controller 'auth_public', is used by users who have logged in and now wish to manage their account settings
 	 * 
-	 * All demos are to be used as exactly that, a demonstation of what the library can do.
+	 * All demos are to be used as exactly that, a demonstration of what the library can do.
 	 * In a few cases, some of the examples may not be considered as 'Best practice' at implementing some features in a live environment.
 	*/
 	
@@ -261,6 +261,3 @@ class Auth_public extends CI_Controller {
 		$this->load->view('demo/public_examples/address_update_view', $this->data);		
 	}
 }
-	
-/* End of file auth_public.php */
-/* Location: ./application/controllers/auth_public.php */	

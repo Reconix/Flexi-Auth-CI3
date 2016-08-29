@@ -684,6 +684,3 @@ class Flexi_auth_lite
 		return ($messages) ? $messages['status'].$messages['errors'] : FALSE;
 	}	
 }
-
-/* End of file flexi_auth_lite.php */
-/* Location: ./application/controllers/flexi_auth_lite.php */

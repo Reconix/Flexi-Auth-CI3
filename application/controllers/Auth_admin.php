@@ -61,7 +61,7 @@ class Auth_admin extends CI_Controller {
 	 * These demos show working examples of how to implement some (most) of the functions available from the flexi auth library.
 	 * This particular controller 'auth_admin', is used by logged in admins to manage users and user groups.
 	 * 
-	 * All demos are to be used as exactly that, a demonstation of what the library can do.
+	 * All demos are to be used as exactly that, a demonstration of what the library can do.
 	 * In a few cases, some of the examples may not be considered as 'Best practice' at implementing some features in a live environment.
 	*/
 
@@ -110,7 +110,7 @@ class Auth_admin extends CI_Controller {
  	/**
  	 * manage_user_accounts
  	 * View and manage a table of all users.
- 	 * This example allows accounts to be suspended or deleted via checkoxes within the page.
+ 	 * This example allows accounts to be suspended or deleted via check boxes within the page.
  	 * The example also includes a search tool to lookup users via either their email, first name or last name. 
  	 */
     function manage_user_accounts()
@@ -190,7 +190,7 @@ class Auth_admin extends CI_Controller {
  	/**
  	 * manage_user_groups
  	 * View and manage a table of all user groups.
- 	 * This example allows user groups to be deleted via checkoxes within the page.
+ 	 * This example allows user groups to be deleted via check boxes within the page.
  	 */
     function manage_user_groups()
     {
@@ -288,7 +288,7 @@ class Auth_admin extends CI_Controller {
  	/**
  	 * manage_privileges
  	 * View and manage a table of all user privileges.
- 	 * This example allows user privileges to be deleted via checkoxes within the page.
+ 	 * This example allows user privileges to be deleted via check boxes within the page.
  	 */
     function manage_privileges()
     {
@@ -555,7 +555,7 @@ class Auth_admin extends CI_Controller {
  	/**
  	 * delete_unactivated_users
  	 * Display a list of all user accounts that have not been activated within a define time period. 
- 	 * This demo example allows the option to then delete all of the unactivated accounts.
+ 	 * This demo example allows the option to then delete all of the inactivated accounts.
  	 */
 	function delete_unactivated_users()
 	{
@@ -569,7 +569,7 @@ class Auth_admin extends CI_Controller {
 		// Filter accounts old than set number of days.
 		$inactive_days = 28;
 	
-		// If 'Delete Unactivated Users' form has been submitted and user has privileges to delete users.
+		// If 'Delete Inactivated Users' form has been submitted and user has privileges to delete users.
 		if ($this->input->post('delete_unactivated') && $this->flexi_auth->is_privileged('Delete Users'))
 		{
 			$this->load->model('demo_auth_admin_model');
@@ -660,6 +660,3 @@ class Auth_admin extends CI_Controller {
 	}
 
 }
-
-/* End of file auth_admin.php */
-/* Location: ./application/controllers/auth_admin.php */

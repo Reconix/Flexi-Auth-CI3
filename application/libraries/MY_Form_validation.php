@@ -96,6 +96,3 @@ class MY_Form_validation extends CI_Form_validation
         return TRUE;
     }
 }
-
-/* End of file MY_Form_validation.php */
-/* Location: ./application/library/MY_Form_validation.php */ 	

@@ -177,7 +177,7 @@ class Auth extends CI_Controller {
 		else if ($this->input->post('register_user'))
 		{			
 			$this->load->model('demo_auth_model');
-			$this->demo_auth_model->register_account();
+			$this->demo_auth_model->register_account($this->auth->auth_settings['instant_activate_new_accounts']);
 		}
 		
 		// Get any status message that may have been set.
@@ -333,6 +333,3 @@ class Auth extends CI_Controller {
 		redirect('auth');
     }	
 }
-
-/* End of file auth.php */
-/* Location: ./application/controllers/auth.php */
