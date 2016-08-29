@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>User Registration Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
+	<title>Admin User Registration Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
 	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
 	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
@@ -104,9 +104,9 @@
 								<label for="confirm_password">Confirm Password:</label>
 								<input type="password" id="confirm_password" name="register_confirm_password" value="1" <?php echo set_checkbox('register_confirm_password',1);?>/>
 							</li>
-                                                        <li class="info_req">
-                                                            <button id="generate_pass" type="button" onclick="generatePassword(8)"> Generar Contraseña </button>
-                                                        </li>
+							<li class="info_req">
+								<button id="generate_pass" type="button" onclick="generatePassword(8)"> Generate Password </button>
+							</li>
 						</ul>
 					</fieldset>
 					
@@ -118,9 +118,9 @@
 								<h6>Important Note</h6>
 								<small>The data saved via this demo is available for anyone else using the demo to see, therefore, you may wish to only test this registration page via your local development environment. All data that is saved via this demo, is completely wiped every few hours.</small>
 							</li>
-                                                        <li class="info_req">
+                            <li class="info_req">
 								<label for="activate_account">Instant Activate account:</label>
-                                                                <input type="checkbox" id="activate_account" name="activate_account" value="<?php echo set_value('register_password');?>"/>
+                                <input type="checkbox" id="activate_account" name="activate_account" value="<?php echo set_value('register_password');?>"/>
 							</li>
 							<li>
 								<hr/>

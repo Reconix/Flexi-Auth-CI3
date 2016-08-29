@@ -650,8 +650,8 @@ class Auth_admin extends CI_Controller {
 		}
 		if ($this->input->post('register_user'))
 		{
-			$this->load->model('auth_model');
-			$this->auth_model->register_account($this->input->post("activate_account"));
+			$this->load->model('Demo_auth_model');
+			$this->Demo_auth_model->register_account($this->input->post("activate_account"));
 		}
 		
 		// Get any status message that may have been set.
