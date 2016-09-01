@@ -38,6 +38,6 @@ http://jeffreybarke.net/tools/codeigniter-encryption-key-generator/
 Original Author: Rob Hussey
 
 Additnial Contributions:
-Dansanti , Reconix ,
+Dansanti , Jeteon , Reconix ,
 
 
