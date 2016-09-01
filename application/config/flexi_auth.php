@@ -1,4 +1,5 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 * Name: flexi auth Config
 *
@@ -14,7 +15,17 @@
 * Phil Sturgeon, philsturgeon.co.uk
 * Mathew Davies
 *
-
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+* 
+* http://www.apache.org/licenses/LICENSE-2.0
+* 
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
 *
 * Description: A full login authorisation and user management library for CodeIgniter based on Ion Auth (By Ben Edmunds) which itself was based on Redux Auth 2 (Mathew Davies)
 * Released: 13/09/2012
@@ -109,7 +120,7 @@
 	*/ 
 	$config['database']['user_privilege_users']['table'] = 'user_privilege_users';
 	$config['database']['user_privilege_users']['columns']['id'] = 'upriv_users_id';
-	$config['database']['user_privilege_users']['columns']['id'] = 'upriv_users_uacc_fk';
+	$config['database']['user_privilege_users']['columns']['user_id'] = 'upriv_users_uacc_fk';
 	$config['database']['user_privilege_users']['columns']['privilege_id'] = 'upriv_users_upriv_fk';
 
 	/**
@@ -127,14 +138,14 @@
 	
 	/**
 	 * User Login Session Table
-	 * The user login session table is used to validate user login credentials. For security purposes, if a users credentials do not match those  
+	 * The user login session table is used to validate user login credentials. For security purposes, if a users credentitals do not match those  
 	 * stored within the table, the user is automatically logged out.
 	 *
 	 * All columns are required.
 	*/ 
 	$config['database']['user_sess']['table'] = 'user_login_sessions';
 	$config['database']['user_sess']['join'] = 'user_login_sessions.usess_uacc_fk';
-	$config['database']['user_sess']['columns']['id'] = 'usess_uacc_fk';
+	$config['database']['user_sess']['columns']['user_id'] = 'usess_uacc_fk';
 	$config['database']['user_sess']['columns']['series'] = 'usess_series';
 	$config['database']['user_sess']['columns']['token'] = 'usess_token';
 	$config['database']['user_sess']['columns']['date'] = 'usess_login_date';
@@ -261,7 +272,7 @@
 	 * 
 	 * If required, it is possible to set your own name for each session variable.
 	 * Note: Only change the name in the apostrophes (after the '=' sign), and not the $config array names.
-	 * Example: Change $config['sessions']['id'] = 'id' to $config['sessions']['id'] = 'new_session_name'
+	 * Example: Change $config['sessions']['user_id'] = 'user_id' to $config['sessions']['user_id'] = 'new_session_name'
 	*/ 
 
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###
@@ -273,7 +284,7 @@
 	$config['sessions']['name'] = 'flexi_auth';
 		
 	/**
-	 * Primary User Identifier Session
+	 * Primary User Indentifier Session
 	 * Contains the $config['database']['settings']['primary_identity_col'] column value (Defined above).
 	 * This value is then used to internally identify the user when performing CRUD functions.
 	*/
@@ -283,7 +294,7 @@
 	 * User Account Data Sessions
 	 * Used for performing various CRUD functions.
 	*/
-	$config['sessions']['id'] = 'id';
+	$config['sessions']['user_id'] = 'user_id';
 	$config['sessions']['is_admin'] = 'admin';
 	$config['sessions']['group'] = 'group';
 	$config['sessions']['privileges'] = 'privileges';
@@ -319,7 +330,7 @@
 	 * 
 	 * If required, it is possible to set your own name for each cookie variable.
 	 * Note: Only change the name in the apostrophes (after the '=' sign), and not the $config array names.
-	 * Example: Change $config['cookies']['id'] = 'id' to $config['cookies']['id'] = 'new_session_name'
+	 * Example: Change $config['cookies']['user_id'] = 'user_id' to $config['cookies']['user_id'] = 'new_session_name'
 	*/ 
 
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###
@@ -328,7 +339,7 @@
 	 * 'Remember me' Cookies
 	 * Used to store 'Remember me' data to automatically log a user in next time they visit the website.
 	*/
-	$config['cookies']['id'] = 'id';
+	$config['cookies']['user_id'] = 'user_id';
 	$config['cookies']['remember_series'] = 'remember_series';
 	$config['cookies']['remember_token'] = 'remember_token';
 	
@@ -369,7 +380,7 @@
 	 * Set whether login details are validated on every page load.
 	 * @param bool
 	 *
-	 * TRUE = Login credentials are validated against the database every time a page is loaded, invalid users are logged out automatically.
+	 * TRUE = Login credentials are validated against the database everytime a page is loaded, invalid users are logged out automatically.
 	 * FALSE = Login credentials are validated only once at time of login and will not expire until CI sessions expire (Defined via CI config file).
 	*/
 	$config['security']['validate_login_onload'] = TRUE;
@@ -454,7 +465,7 @@
 	 * Default allows alpha-numeric, dashes, underscores, periods and commas ('\.\,\-_ a-z0-9').
 	 * Note this is a regular expression.
 	*/ 
-	$config['security']['valid_password_chars'] = '\.\,\-_ a-z0-9';
+	$config['security']['valid_password_chars'] = '\.\,\-_ a-zA-Z0-9';
 
 	/**
 	 * Set the static (non-database stored) salt used for password and hash token generation.
@@ -463,8 +474,11 @@
 	 * !IMPORTANT: 
 	 *	Do NOT change this salt once users have started registering accounts as their passwords will not work without the original salt.
 	 *	CHANGE THE DEFAULT STATIC SALT SET BELOW TO YOUR OWN RANDOM SET OF CHARACTERS.
+         * !VERY IMPORTANT:
+         *      static-salt must be at least 22 characters!!
+		 * Random Salts are also fine, although randomly generated ones will always be better.
 	*/
-	$config['security']['static_salt'] = 'change-me!';
+	$config['security']['static_salt'] = 'GYpXN<Y?Ky+_9|tgrp:jmgfhX[5?W$_b6o #J=z:$_aI0i>[/bpj1Cl6%E3?M+%0';
 	
 	/**
 	 * Set whether a salt is stored in the database and then used for password and hash token generation.
@@ -478,7 +492,7 @@
 	 *
  	 * Note: Only used if $config['security']['store_database_salt'] = TRUE
 	*/
-	$config['security']['database_salt_length'] = 10;
+	$config['security']['database_salt_length'] = 22;
 	
 	/**
 	 * Set the expiry time of unused 'Forgotten Password' tokens.
@@ -577,13 +591,13 @@
 	*/
 	$config['settings']['auto_increment_username'] = FALSE;
 	
-    /**
+        /**
 	 * Set whether accounts are activate by default on registration / inserting user.
 	 * This option allows admins to verify account details before enabling users.
 	 * @param: bool
 	*/
 	$config['settings']['instant_activate_new_accounts'] = FALSE;
-	
+        
 	/**
 	 * Set whether accounts are suspended by default on registration / inserting user.
 	 * This option allows admins to verify account details before enabling users.
@@ -757,3 +771,6 @@
 	$config['messages']['target_user']['form_validation_duplicate_identity'] = 'public';
 	$config['messages']['target_user']['form_validation_duplicate_email'] = 'public';
 	$config['messages']['target_user']['form_validation_duplicate_username'] = 'public';
+
+/* End of file flexi_auth.php */
+/* Location: ./system/application/config/flexi_auth.php */

@@ -6,9 +6,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Update Email Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
-	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
-	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
+	<title>Update Email Demo | Flexi Auth | A User Authentication Library for CodeIgniter</title>
+	<meta name="description" content="Flexi Auth, the user authentication library designed for developers."/> 
+	<meta name="keywords" content="demo, Flexi Auth, user authentication, Codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
 </head>
 
@@ -26,7 +26,7 @@
 		<div class="content clearfix">
 			<div class="col100">
 				<h2>Public: Change Email via Email Verification</h2>
-				<p>Whilst it is possible to instantly update a users email address using the flexi auth library, if a user was to unknowingly mispell their email address, they would be unable to login at a later date, as they wouldn't know how they spelt the email address.</p>
+				<p>Whilst it is possible to instantly update a users email address using the Flexi Auth library, if a user was to unknowingly misspell their email address, they would be unable to login at a later date, as they wouldn't know how they spelt the email address.</p>
 				<p>To counter this problem, when updating the email via email verification, once the user submits their new email address, an email is sent to the user, if they do not click the verification link in that email, their account is not updated.</p>
 			</div>		
 		</div>

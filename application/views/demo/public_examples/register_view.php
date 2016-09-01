@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>User Registration Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
+	<title>User Registration Demo | Flexi Auth | A User Authentication Library for CodeIgniter</title>
 	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
 	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
@@ -26,7 +26,7 @@
 		<div class="content clearfix">
 			<div class="col100">
 				<h2>Register Account</h2>
-				<p>User registation is a core requirement for any site that is to allow anonymous users to register for an account within the site.</p>
+				<p>User registration is a core requirement for any site that is to allow anonymous users to register for an account within the site.</p>
 				<p>The data collected and saved during this process will always vary from site to site, but typically comes down to two primary types, data that is essential for user authentication and then user profile data.</p>
 				<p>The essential user authentication data consists of information like a users email address and password that are required by users to securely log into their account. In addition to this, the flexi auth library can also automatically save and manage user data like IP addresses, last login dates etc.</p>
 				<p>As for the user profile data, flexi auth allows you to save and relate whatever data you require to the users account, whether that data is all stored in the same table, or via multiple tables. The design of the database schema is up to you.</p>
@@ -64,7 +64,10 @@
 					<fieldset>
 						<legend>Contact Details</legend>
 						<ul>
-
+							<li class="info_req">
+								<label for="phone_number">Phone Number:</label>
+								<input type="text" id="phone_number" name="register_phone_number" value="<?php echo set_value('register_phone_number');?>"/>
+							</li>
 							<li>
 								<label for="newsletter">Subscribe to Newsletter:</label>
 								<input type="checkbox" id="newsletter" name="register_newsletter" value="1" <?php echo set_checkbox('register_newsletter',1);?>/>

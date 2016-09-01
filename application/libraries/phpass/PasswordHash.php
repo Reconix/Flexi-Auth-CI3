@@ -24,8 +24,6 @@
 # Obviously, since this code is in the public domain, the above are not
 # requirements (there can be none), but merely suggestions.
 #
-# Note: although this is great there's actually better hashes now.
-#
 class PasswordHash {
 	var $itoa64;
 	var $iteration_count_log2;

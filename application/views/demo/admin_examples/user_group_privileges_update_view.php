@@ -6,9 +6,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Update User Group Privileges Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
-	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
-	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
+	<title><?php echo lang("update_user_group_privileges_demo"); ?> | Flexi Auth | <?php echo lang("a_user_authentication_library"); ?></title>
+	<meta name="description" content="Flexi Auth, the user authentication library designed for developers."/> 
+	<meta name="keywords" content="demo, Flexi Auth, user authentication, Codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
 </head>
 
@@ -25,13 +25,13 @@
 	<div class="content_wrap intro_bg">
 		<div class="content clearfix">
 			<div class="col100">
-				<h2>Admin: Update User Group Privileges</h2>
-				<p>The flexi auth library allows for unlimited custom privileges to be defined. The privileges can then be assigned to user groups or users individually.</p>
+				<h2><?php echo lang("admin_update_user_group_privileges"); ?></h2>
+				<p>The Flexi Auth library allows for unlimited custom privileges to be defined. The privileges can then be assigned to user groups or users individually.</p>
 				<p>Once privileges have been defined, access to specific pages or even specific sections of pages can be controlled by checking whether a user has permission to access a requested page.</p>
-				<p>The default setup of this demo uses user groups and privileges to restrict the example public user from accessing the admin area, and the example moderator user from inserting, updating and deleting specific data within the admin area.</p>
+				<p>The default setup of this demo uses user groups and privileges to restrict the example public user from accessing the Admin area, and the example moderator user from inserting, updating and deleting specific data within the Admin area.</p>
                 <h3 class="toggle">&raquo; View Current Privilege Sources</h3>
                 <div class="hide_toggle">
-	                <p>The flexi auth config. setting '<em>privilege_sources</em>' defines whether user privileges should be determined by individual privileges assigned per user, or via privileges assigned to a users user group. 
+	                <p>The Flexi Auth config. setting '<em>privilege_sources</em>' defines whether user privileges should be determined by individual privileges assigned per user, or via privileges assigned to a users user group. 
 	                <p>According to the current settings:</p>
 	                <ul class="bullet">
 	                <?php
@@ -63,9 +63,9 @@
 	<div class="content_wrap main_content_bg">
 		<div class="content clearfix">
 			<div class="col100">
-				<h2>Update User Group Privileges of Group '<?php echo $group['ugrp_name']; ?>'</h2>
-				<a href="<?php echo $base_url;?>auth_admin/manage_user_groups">Manage User Groups</a> | 
-				<a href="<?php echo $base_url;?>auth_admin/update_user_group/<?php echo $group['ugrp_id']; ?>">Update User Group</a>
+				<h2><?php echo lang("update_user_group_privileges_of_group"); ?> '<?php echo $group['ugrp_name']; ?>'</h2>
+				<a href="<?php echo $base_url;?>auth_admin/manage_user_groups"><?php echo lang("manage_user_groups"); ?></a> | 
+				<a href="<?php echo $base_url;?>auth_admin/update_user_group/<?php echo $group['ugrp_id']; ?>"><?php echo lang("update_user_group"); ?></a>
 
 			<?php if (! empty($message)) { ?>
 				<div id="message">
@@ -79,15 +79,15 @@
 							<tr>
 								<th class="tooltip_trigger"
 									title="The name of the privilege."/>
-									Privilege Name
+									<?php echo lang("privilege_name"); ?>
 								</th>
 								<th class="tooltip_trigger"
 									title="A short description of the purpose of the privilege."/>
-									Description
+									<?php echo lang("description"); ?>
 								</th>
 								<th class="spacer_150 align_ctr tooltip_trigger"
 									title="If checked, the user will be granted the privilege."/>
-									User Has Privilege
+									<?php echo lang("user_has_privilege"); ?>
 								</th>
 							</tr>
 						</thead>
@@ -115,7 +115,7 @@
 						<tfoot>
 							<tr>
 								<td colspan="3">
-									<input type="submit" name="update_group_privilege" value="Update Group Privileges" class="link_button large"/>
+									<input type="submit" name="update_group_privilege" value="<?php echo lang("update_group_privilege"); ?>" class="link_button large"/>
 								</td>
 							</tr>
 						</tfoot>

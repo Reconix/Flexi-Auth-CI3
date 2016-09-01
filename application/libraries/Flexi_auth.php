@@ -34,7 +34,7 @@
 
 // Load the flexi auth Lite library to allow it to be extended.
 $CI =& get_instance();
-$CI->load->library('Flexi_auth_lite'); 
+$CI->load->library('Flexi_auth_lite');
 
 class Flexi_auth extends Flexi_auth_lite
 {
@@ -270,7 +270,7 @@ class Flexi_auth extends Flexi_auth_lite
 			$email_title = ' - Account Activation';
 		
 			$user_data = array(
-				'id' => $user_id,
+				'user_id' => $user_id,
 				'identity' => $identity,
 				'activation_token' => $activation_token
 			);
@@ -1009,7 +1009,7 @@ class Flexi_auth extends Flexi_auth_lite
 
 		if (! $sql_where)
 		{
-			$sql_where = array($this->CI->auth->tbl_col_user_account['id'] => $this->CI->auth->session_data[$this->CI->auth->session_name['id']]);
+			$sql_where = array($this->CI->auth->tbl_col_user_account['id'] => $this->CI->auth->session_data[$this->CI->auth->session_name['user_id']]);
 		}
 	
 		return $this->CI->flexi_auth_model->get_users($sql_select, $sql_where);
@@ -1070,8 +1070,8 @@ class Flexi_auth extends Flexi_auth_lite
 	{
 		if (! $sql_where)
 		{
-			$sql_where = array($this->CI->auth->tbl_col_user_privilege_users['id'] => 
-				$this->CI->auth->session_data[$this->CI->auth->session_name['id']]);
+			$sql_where = array($this->CI->auth->tbl_col_user_privilege_users['user_id'] => 
+				$this->CI->auth->session_data[$this->CI->auth->session_name['user_id']]);
 		}
 	
 		return $this->CI->flexi_auth_model->get_user_privileges($sql_select, $sql_where);

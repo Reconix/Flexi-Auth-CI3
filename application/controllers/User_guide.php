@@ -19,10 +19,8 @@ class User_guide extends CI_Controller {
 		}
 
 		// Load CI libraries and helpers.
-		$this->load->database();
-		$this->load->library('session');
 		$this->load->helper('text');
- 		$this->load->helper('url');
+ 		
  		$this->load->helper('form');
 
   		// IMPORTANT! This global must be defined BEFORE the flexi auth library is loaded! 

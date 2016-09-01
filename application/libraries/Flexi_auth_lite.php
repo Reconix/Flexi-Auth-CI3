@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php  defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 * Name: flexi auth Lite
 *
@@ -52,7 +52,7 @@ class Flexi_auth_lite
 			$this->CI->flexi_auth_lite_model->validate_database_login_session();
 		}
 		// Auto log in the user if they have 'Remember me' cookies.
-		else if (!$this->is_logged_in() && get_cookie($this->CI->auth->cookie_name['id']) && 
+		else if (!$this->is_logged_in() && get_cookie($this->CI->auth->cookie_name['user_id']) && 
 			get_cookie($this->CI->auth->cookie_name['remember_series']) && get_cookie($this->CI->auth->cookie_name['remember_token']))
 		{
 			$this->CI->load->model('flexi_auth_model');
@@ -285,8 +285,8 @@ class Flexi_auth_lite
 	 */
 	public function get_user_id()
 	{
-		return ($this->CI->auth->session_data[$this->CI->auth->session_name['id']] !== FALSE) ? 
-			$this->CI->auth->session_data[$this->CI->auth->session_name['id']] : FALSE;
+		return ($this->CI->auth->session_data[$this->CI->auth->session_name['user_id']] !== FALSE) ? 
+			$this->CI->auth->session_data[$this->CI->auth->session_name['user_id']] : FALSE;
 	}
 	
 	/**

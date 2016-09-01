@@ -36,7 +36,6 @@ class Flexi_auth_lite_model extends CI_Model
 	public function __construct()
 	{
 		$this->load->database();
-		 $this->load->driver("session");
 		$this->load->helper('cookie');
 		$this->load->config('flexi_auth', TRUE);
 		$this->lang->load('flexi_auth');
@@ -226,7 +225,7 @@ class Flexi_auth_lite_model extends CI_Model
 	 */
 	public function logout($all_sessions = TRUE)
 	{
-		$user_id = $this->auth->session_data[$this->auth->session_name['id']];
+		$user_id = $this->auth->session_data[$this->auth->session_name['user_id']];
 				
 		// Delete database login sessions and 'Remember me' cookies.
 		$this->delete_database_login_session($user_id, $all_sessions);
@@ -234,6 +233,9 @@ class Flexi_auth_lite_model extends CI_Model
 		// Delete session login data.
 		$this->auth->session_data = $this->set_auth_defaults();
 		$this->session->unset_userdata($this->auth->session_name['name']);
+                
+                //delete CI_session
+                $this->session->sess_destroy();
 
 		// Run database maintenance function to clean up any expired login sessions.
 		$this->delete_expired_remember_users();
@@ -273,9 +275,9 @@ class Flexi_auth_lite_model extends CI_Model
 	 */
 	public function delete_remember_me_cookies()
 	{
-		if (get_cookie($this->auth->cookie_name['id']))
+		if (get_cookie($this->auth->cookie_name['user_id']))
 		{
-			delete_cookie($this->auth->cookie_name['id']);
+			delete_cookie($this->auth->cookie_name['user_id']);
 		}
 		if ($remember_series = get_cookie($this->auth->cookie_name['remember_series']))
 		{
@@ -324,7 +326,7 @@ class Flexi_auth_lite_model extends CI_Model
 			}
 					
 			$sql_where = '('.
-				$this->auth->tbl_col_user_session['id'].' = '.$this->db->escape($user_id).' AND '.
+				$this->auth->tbl_col_user_session['user_id'].' = '.$this->db->escape($user_id).' AND '.
 				$this->auth->tbl_col_user_session['series'].' = '.$this->db->escape($this->hash_cookie_token($remember_series)).' AND '.
 				$this->auth->tbl_col_user_session['token'].' = '.$this->db->escape($this->hash_cookie_token($remember_token)).
 			')';
@@ -334,7 +336,7 @@ class Flexi_auth_lite_model extends CI_Model
 			if ($session_token = $this->auth->session_data[$this->auth->session_name['login_session_token']])
 			{
 				$sql_where = '('.
-					$this->auth->tbl_col_user_session['id'].' = '.$this->db->escape($user_id).' AND '.
+					$this->auth->tbl_col_user_session['user_id'].' = '.$this->db->escape($user_id).' AND '.
 					$this->auth->tbl_col_user_session['token'].' = '.$this->db->escape($session_token).
 				')';
 				$this->db->or_where($sql_where, NULL, FALSE);
@@ -342,7 +344,7 @@ class Flexi_auth_lite_model extends CI_Model
 		}
 		else
 		{
-			$this->db->where($this->auth->tbl_col_user_session['id'], $user_id);
+			$this->db->where($this->auth->tbl_col_user_session['user_id'], $user_id);
 		}
 
 		// Delete database session records.
@@ -363,7 +365,7 @@ class Flexi_auth_lite_model extends CI_Model
 	 */
 	public function validate_database_login_session()
 	{
-		$user_id = $this->auth->session_data[$this->auth->session_name['id']];
+		$user_id = $this->auth->session_data[$this->auth->session_name['user_id']];
 		$session_token = $this->auth->session_data[$this->auth->session_name['login_session_token']];
 		
 		$sql_where = array(
@@ -420,7 +422,7 @@ class Flexi_auth_lite_model extends CI_Model
 				$sql_update[$this->auth->tbl_col_user_session['date']] = $this->database_date_time();
 				
 				$sql_where = array(
-					$this->auth->tbl_col_user_session['id'] => $user_id,
+					$this->auth->tbl_col_user_session['user_id'] => $user_id,
 					$this->auth->tbl_col_user_session['token'] => $session_token
 				);
 				
@@ -861,6 +863,3 @@ class Flexi_auth_lite_model extends CI_Model
 		$this->auth->like = $this->auth->or_like = $this->auth->not_like = $this->auth->or_not_like = array();
 	}	
 }
-
-/* End of file flexi_auth_lite_model.php */
-/* Location: ./application/controllers/flexi_auth_lite_model.php */

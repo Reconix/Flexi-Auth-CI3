@@ -6,9 +6,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Forgotten Password Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
+	<title>Forgotten Password Demo | Flexi Auth | A User Authentication Library for CodeIgniter</title>
 	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
-	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
+	<meta name="keywords" content="demo, flexi auth, user authentication, Codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
 </head>
 
@@ -28,8 +28,8 @@
 				<h2>Forgotten Password</h2>
 				<p>Users forgetting passwords is a common problem for sites that support user accounts. It is an essential feature that users must be able to securely reset their password without the involvement of a site administrator.</p>
 				<p>
-					Since the flexi auth library securely hashes all user passwords, it is not possible to check what the users forgotten password is and then inform them.<br/>
-					Therefore, the library includes a function that will email a link to the user that includes a unique token. When the user clicks the link, the user is directed to a page that validates whether the token is valid, provided it is, the flexi auth library can then be configured to allow the user to manually reset their password, or to automatically email the user a new password.
+					Since the Flexi Auth library securely hashes all user passwords, it is not possible to check what the users forgotten password is and then inform them.<br/>
+					Therefore, the library includes a function that will email a link to the user that includes a unique token. When the user clicks the link, the user is directed to a page that validates whether the token is valid, provided it is, the Flexi Auth library can then be configured to allow the user to manually reset their password, or to automatically email the user a new password.
 				</p>
 				<p>This demo is setup to send the user an email with a link, when they click the link, they are directed to a page where they can manually change their password.</p>
 			</div>		

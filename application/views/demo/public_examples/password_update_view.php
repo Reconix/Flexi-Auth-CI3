@@ -6,9 +6,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Password Update Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
+	<title>Password Update Demo | Flexi Auth | A User Authentication Library for CodeIgniter</title>
 	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
-	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
+	<meta name="keywords" content="demo, flexi auth, user authentication, Codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
 </head>
 
@@ -27,7 +27,7 @@
 			<div class="col100">
 				<h2>Public: Update Password</h2>
 				<p>The users password is the front line of defence when protecting an account from unauthorised access.</p>
-				<p>The flexi auth library includes functions to help the secure managment of user passwords using the popular <a href="http://www.openwall.com/phpass/" target="_blank">phpass framework</a>.</p>
+				<p>The flexi auth library includes functions to help the secure management of user passwords using the popular <a href="http://www.openwall.com/phpass/" target="_blank">phpass framework</a>.</p>
 				<p>In addition, flexi auth extends CodeIgniters form validation class so that entered passwords can be consistently validated to contain valid characters and be of a specific character length.</p>
 			</div>
 		</div>

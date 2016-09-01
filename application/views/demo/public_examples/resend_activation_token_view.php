@@ -6,9 +6,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Resend Account Activation Demo | flexi auth | A User Authentication Library for CodeIgniter</title>
+	<title>Resend Account Activation Demo | Flexi Auth | A User Authentication Library for CodeIgniter</title>
 	<meta name="description" content="flexi auth, the user authentication library designed for developers."/> 
-	<meta name="keywords" content="demo, flexi auth, user authentication, codeigniter"/>
+	<meta name="keywords" content="demo, flexi auth, user authentication, Codeigniter"/>
 	<?php $this->load->view('includes/head'); ?> 
 </head>
 
@@ -27,7 +27,7 @@
 			<div class="col100">
 				<h2>Resend Activation Token</h2>
 				<p>This demo is setup to require that users that register for a new account must activate their account via clicking a link that is emailed to them immediately upon registration.</p>
-				<p>Since the user can not gain access to their account until it is activated, it is important to allow users to request for the activation email to be resent to them incase they have not received the initial activation email.</p>
+				<p>Since the user can not gain access to their account until it is activated, it is important to allow users to request for the activation email to be resent to them encase they have not received the initial activation email.</p>
 			</div>		
 		</div>
 	</div>

@@ -21,7 +21,7 @@ class Auth_lite extends CI_Controller {
 		// Load CI libraries and helpers.
 		$this->load->database();
 		$this->load->library('session');
- 		$this->load->helper('url');
+ 		
 
   		// IMPORTANT! This global must be defined BEFORE the flexi auth library is loaded! 
  		// It is used as a global that is accessible via both models and both libraries, without it, flexi auth will not work.
