@@ -84,7 +84,10 @@ class Flexi_auth_model extends Flexi_auth_lite_model
 		{
                     
                     $data["salt"]=$static_salt.$database_salt;
-                    return password_hash($token, 1, $data);
+
+                    //return password_hash($token, 1, $data);
+                    return password_hash($token, PASSWORD_DEFAULT);
+
 		}
 		else
 		{
@@ -1051,10 +1054,14 @@ class Flexi_auth_model extends Flexi_auth_lite_model
 		
                 $data["salt"]=$static_salt.$database_salt;
                 $match=false;
-                if( password_hash($verify_password, 1, $data) == $database_password)
+                
+                //if( password_hash($verify_password, 1, $data) == $database_password)
+                if(password_verify($verify_password, $database_password))
                 {
                     $match=true;
-                    if(password_needs_rehash($database_password, 1)) {
+                    //if(password_needs_rehash($database_password, 1)) {
+                    if(password_needs_rehash($database_password, PASSWORD_DEFAULT)) {
+
                         // store new hash in database
                          $this->__save_rehashed_password($identity,  $verify_password); 
                     }
