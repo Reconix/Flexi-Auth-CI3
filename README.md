@@ -1,5 +1,5 @@
 
-#Codeigniter 3 with Flexiauth + Demo
+# Codeigniter 3 with Flexiauth + Demo
 
 Read a list of features available from the flexi auth library.  
 http://haseydesign.com/flexi-auth/auth_lite/features  
@@ -15,14 +15,14 @@ Library User Guide: http://haseydesign.com/flexi-auth/user_guide/
 If you would just like the core files required for your project, be sure to check dansanti fork.
 https://github.com/dansanti/flexi-auth
 
-#Github Page
+## Github Page
 Because why not...
 https://reconix.github.io/Flexi-Auth-CI3/
 
-#Badges
+## Badges
 This will be updated with badges soon...
 
-#Install
+## Install
 Update the 'base_url' to CodeIgniters root installation directory.  
 
 $config['base_url'] = 'http://localhost/your_codeigniter_directory/';  
@@ -34,10 +34,10 @@ $config['encryption_key'] = 'YOUR_ENCRYPTION_KEY';
 get your key here   
 http://jeffreybarke.net/tools/codeigniter-encryption-key-generator/  
   
-#Contributors
+# Contributors
 Original Author: Rob Hussey
 
 Additnial Contributions:
-Dansanti , Jeteon , Reconix ,
+Dansanti , Jeteon , Reconix , eafarooqi  
 
 
