@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 * Name: flexi auth Lite
 *
@@ -684,6 +684,3 @@ class Flexi_auth_lite
 		return ($messages) ? $messages['status'].$messages['errors'] : FALSE;
 	}	
 }
-
-/* End of file flexi_auth_lite.php */
-/* Location: ./application/controllers/flexi_auth_lite.php */

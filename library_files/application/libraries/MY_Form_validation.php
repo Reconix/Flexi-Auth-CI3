@@ -1,10 +1,10 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Form_validation extends CI_Form_validation 
 {
-	public function __construct()
+	public function __construct($rules = array())
 	{
-		parent::__construct();
+		parent::__construct($rules);
 	}
 
     // Check identity is available
@@ -96,6 +96,3 @@ class MY_Form_validation extends CI_Form_validation
         return TRUE;
     }
 }
-
-/* End of file MY_Form_validation.php */
-/* Location: ./application/library/MY_Form_validation.php */ 	
