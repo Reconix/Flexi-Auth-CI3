@@ -1,5 +1,5 @@
 
-# Codeigniter 3 with Flexiauth + Demo
+# Flexiauth Core Files
 
 Read a list of features available from the flexi auth library.  
 http://haseydesign.com/flexi-auth/auth_lite/features  
